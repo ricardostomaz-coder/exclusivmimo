@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exclusivmimo | Convites Personalizados</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+/* HEADER */
+header {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* HERO */
+.hero {
+  background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* PRODUTOS */
+.produtos {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.produto {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Exclusivmimo</h1>
+  <p>Convites e lembranças personalizadas</p>
+</header>
+
+<section class="hero">
+  <h2>Torne o seu momento único</h2>
+  <p>Convites personalizados para todas as ocasiões</p>
+  <button onclick="scrollToProdutos()">Ver Produtos</button>
+</section>
+
+<section class="produtos" id="produtos">
+
+  <div class="produto">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    <h3>Convite de Casamento</h3>
+    <p>Desde 2€</p>
+    <button onclick="comprar('Convite de Casamento')">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+    <h3>Caixa para Padrinhos</h3>
+    <p>Desde 15€</p>
+    <button onclick="comprar('Caixa para Padrinhos')">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b">
+    <h3>Lembrança Batizado</h3>
+    <p>Desde 1,50€</p>
+    <button onclick="comprar('Lembrança Batizado')">Comprar</button>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Exclusivmimo</p>
+</footer>
+
+<script>
+function scrollToProdutos() {
+  document.getElementById("produtos").scrollIntoView({ behavior: "smooth" });
+}
+
+function comprar(produto) {
+  let numero = "351912345678"; // MUDA PARA O TEU WHATSAPP
+  let mensagem = "Olá, tenho interesse em: " + produto;
+  let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
